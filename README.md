@@ -37,6 +37,26 @@ On LINUX run
         ant book-client
 
 
+The project demonstrates:
+
+    The new Client API
+
+    Request/Response
+    
+    The Invocation Object and the Command Pattern
+    
+    Build-in Entity Resolvers for Object Unmarshalling
+    
+    Server Resource
+    
+    Server Filter
+    
+    Spring Integration
+    
+    Content Negotiation with using default Entity Resolvers 
+
+
+
 Import the projects into Eclipse.
 
 
