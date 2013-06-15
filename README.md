@@ -16,19 +16,28 @@ Three java projects are included:
 
 Build the projects
    
-   --on Windows run 
+On Windows run 
+
         mvn-run.bat build
+   
+        mvn-run.bat book-server
+        
+    In another cmd window
+    
+        mvn-run.bat book-client
 
-   --on LINUX run 
-        ant 
+On LINUX run
+
+        ant
+        
+        ant book-server
+
+    In another terminal
+
+        ant book-client
 
 
-To run the book example:
+Import the projects into Eclipse.
 
-1. run the book-server
-mvn-run.bat book-server
-
-2. in another cmd winwow
-mvn-run.bat book-client
 
 my email: accounts@jchart.com 
