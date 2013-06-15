@@ -45,7 +45,7 @@ The project demonstrates:
     
     The Invocation Object and the Command Pattern
     
-    Build-in Entity Resolvers for Object Unmarshalling
+    Entity Resolvers for Object Unmarshalling
     
     Server Resource
     
@@ -53,7 +53,7 @@ The project demonstrates:
     
     Spring Integration
     
-    Content Negotiation with using default Entity Resolvers 
+    Content Negotiation with using Jackson Entity Resolvers 
 
 
 
