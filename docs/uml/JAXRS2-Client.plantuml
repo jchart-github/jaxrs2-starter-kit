@@ -1,0 +1,21 @@
+@startuml img/jaxrs2-client.png
+
+object Client {
+    target(String url):WebTarget
+}
+object WebTarget {
+  +request:Invocation
+  +path(String path):WebTarget
+}
+object Invocation {
+    +invoke:Response
+}
+object Response {
+    +readEntity<Class T>
+}
+Client o-- WebTarget
+WebTarget o-- Invocation
+Invocation o-- Response
+
+@enduml
+		

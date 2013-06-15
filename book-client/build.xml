@@ -1,0 +1,31 @@
+<project name="MVN copyjars" default="all" basedir=".">
+	
+  <!-- properties -->
+  <property name="lib.dir"          value="${basedir}/lib" />
+	
+<!--
+*******************************************************************
+    all
+**********************************************************************
+-->
+
+<target name="all" depends="copyjars" />
+
+<target name="copyjars">
+    <delete dir="${lib.dir}/" />
+    <mkdir dir="${lib.dir}/" />
+    <exec executable="mvn" spawn="false">
+      <arg line="clean dependency:copy-dependencies"/>
+    </exec>
+    <delete>
+      <fileset dir="${lib.dir}" includes="**/*.pom"/>
+    </delete>
+</target>
+
+<target name="test">
+    <exec executable="mvn" spawn="false">
+      <arg line="test"/>
+    </exec>
+</target>
+
+</project>

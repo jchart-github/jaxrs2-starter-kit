@@ -1,0 +1,21 @@
+<project name="paruss-rest-demo" default="all" basedir=".">
+    
+  <property file="build.properties"/>     
+  <property environment="env"/>
+
+  <property name="target.dir"    value="${basedir}/target" />
+
+  <target name="all" description="build everything">
+    <ant antfile="./common-dto/build.xml" inheritall="false"/>
+    <ant antfile="./book-client/build.xml" inheritall="false"/>
+    <ant antfile="./book-server/build.xml" inheritall="false"/>
+  </target>
+
+  <target name="book-server" description="runs book server">
+      <ant antfile="./book-server/build.xml" inheritall="false" target="run-server"/>
+  </target>
+  <target name="book-client" description="runs book client">
+      <ant antfile="./book-client/build.xml" inheritall="false" target="test"/>
+  </target>
+  
+</project>

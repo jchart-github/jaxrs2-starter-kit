@@ -1,0 +1,22 @@
+<project name="MVN copyjars" default="all" basedir=".">
+	
+  <!-- properties -->
+  <property name="target.dir"          value="${basedir}/target" />
+	
+<!--
+*******************************************************************
+    all
+**********************************************************************
+-->
+
+<target name="all" depends="create-jar" />
+
+<target name="create-jar">
+    <delete dir="${target.dir}/" />
+    <mkdir dir="${target.dir}/" />
+    <exec executable="mvn" spawn="false">
+      <arg line="package install"/>
+    </exec>
+</target>
+
+</project>

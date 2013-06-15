@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jchart.test.jaxrs2.book</groupId>
+	<artifactId>book-service</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>book-service</name>
+
+	<properties>
+		<final.name>book-service</final.name>
+		<lib.dir>lib</lib.dir>
+		<maven.war.plugin.version>2.3</maven.war.plugin.version>
+		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+		<maven.jetty.plugin.version>6.1.10</maven.jetty.plugin.version>
+		<maven.jetty.port>8080</maven.jetty.port>
+		<servlet.api.version>3.0.1</servlet.api.version>
+		<java.version>1.7</java.version>
+		<junit.version>4.11</junit.version>
+		<jackson.version>2.0.2</jackson.version>
+ 		<spring.version>3.2.2.RELEASE</spring.version>
+        <jersey.version>2.0</jersey.version>
+        <jchart.test.jaxrs.version>1.0</jchart.test.jaxrs.version>		
+
+<!--	
+http://stackoverflow.com/questions/16829290/unresolved-dependencies-error-when-following-jersey-2-0-user-guide
+		depending on when you are viewing this, you should go to 
+		https://maven.java.net/content/groups/public/javax/annotation/javax.annotation-api/
+		and check what is the lastest thing.
+-->        
+        <javax.annotation.version>1.2-b04</javax.annotation.version>
+	</properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.glassfish.jersey</groupId>
+                <artifactId>jersey-bom</artifactId>
+                <version>${jersey.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<dependencies>
+        <dependency>
+            <groupId>com.jchart.test.jaxrs</groupId>
+            <artifactId>jchart-test-jaxrs-common-dto</artifactId>
+			<version>${jchart.test.jaxrs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
+            <!-- artifactId>jersey-container-servlet</artifactId -->
+        </dependency>
+        <!-- uncomment this to get JSON support
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-moxy</artifactId>
+        </dependency>
+        -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>${javax.annotation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring 2 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 	</dependencies>
+ 	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven.war.plugin.version}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<!-- enables mvn jetty:run -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>${maven.jetty.plugin.version}</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>${maven.jetty.port}</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<configuration>
+					<outputDirectory>
+						${lib.dir}
+					</outputDirectory>
+				</configuration>
+			</plugin>
+
+		</plugins>
+		<finalName>${final.name}</finalName>
+	</build>
+</project>
