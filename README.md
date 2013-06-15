@@ -1,18 +1,19 @@
 jaxrs2-starter-kit
 ==================
 
-Starter Kit projects for JAX-RS 2
+Starter kit projects for JAX-RS 2 to help get up and running quickly with the Java API for RESTful Web Services
+
 requires
  *Java 7 
  *Maven
 
 Three java projects are included:
+
 1. common-dto - common pojos
 2. book-client - jax-rs 2 demo client
 3. book-server - jax-rs 2 demo server
 
-Steps:
-3. build all projects
+Build the projects
    
    --on Windows run 
         mvn-run.bat build
