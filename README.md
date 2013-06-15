@@ -24,10 +24,10 @@ Build the projects
 
 To run the book example:
 
-1. run the book-server 
+1. run the book-server
 mvn-run.bat book-server
 
-2. in another cmd winwow  
+2. in another cmd winwow
 mvn-run.bat book-client
 
 my email: accounts@jchart.com 
