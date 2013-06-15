@@ -3,9 +3,10 @@ jaxrs2-starter-kit
 
 These demo projects for JAX-RS 2 help get up and running quickly with the Java API for RESTful Web Services
 
-requires
- *Java 7
- *Maven
+Requires
+Java 7 and
+Maven
+
 
 Three java projects are included:
 
