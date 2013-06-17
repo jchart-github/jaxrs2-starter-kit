@@ -3,9 +3,10 @@ jaxrs2-starter-kit
 
 These demo projects for JAX-RS 2 help get up and running quickly with the Java API for RESTful Web Services
 
-requires
- *Java 7 
- *Maven
+Requires
+Java 7 and
+Maven
+
 
 Three java projects are included:
 
@@ -15,19 +16,48 @@ Three java projects are included:
 
 Build the projects
    
-   --on Windows run 
+On Windows run 
+
         mvn-run.bat build
+   
+        mvn-run.bat book-server
+        
+    In another cmd window
+    
+        mvn-run.bat book-client
 
-   --on LINUX run 
-        ant 
+On LINUX run
+
+        ant
+        
+        ant book-server
+
+    In another terminal
+
+        ant book-client
 
 
-To run the book example:
+The project demonstrates:
 
-1. run the book-server 
-mvn-run.bat book-server
+    The new Client API
 
-2. in another cmd winwow  
-mvn-run.bat book-client
+    Request/Response
+    
+    The Invocation Object and the Command Pattern
+    
+    Entity Resolvers for Object Unmarshalling
+    
+    Server Resource
+    
+    Server Filter
+    
+    Spring Integration
+    
+    Content Negotiation with using Jackson Entity Resolvers 
+
+
+
+Import the projects into Eclipse.
+
 
 my email: accounts@jchart.com 
