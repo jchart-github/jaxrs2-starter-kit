@@ -35,5 +35,6 @@
 	<classpathentry kind="lib" path="lib/spring-web-3.2.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/jchart-test-jaxrs-common-dto-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.8.jar"/>
 	<classpathentry kind="output" path="output"/>
 </classpath>

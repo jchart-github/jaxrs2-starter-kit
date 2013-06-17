@@ -22,6 +22,10 @@
     </delete>
 </target>
 
+<!--
+	for debug mode follow these instructions
+	https://cwiki.apache.org/WICKET/maven-jetty-plugin.html
+-->
 <target name="run-server">
     <exec executable="mvn" spawn="false">
       <arg line="jetty:run"/>

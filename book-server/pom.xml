@@ -22,6 +22,7 @@
 		<jackson.version>2.0.2</jackson.version>
  		<spring.version>3.2.2.RELEASE</spring.version>
         <jersey.version>2.0</jersey.version>
+        <commons.codec.version>1.8</commons.codec.version>
         <jchart.test.jaxrs.version>1.0</jchart.test.jaxrs.version>		
 
 <!--	
@@ -85,7 +86,11 @@ http://stackoverflow.com/questions/16829290/unresolved-dependencies-error-when-f
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
+        </dependency>
 		<!-- Spring 2 dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
