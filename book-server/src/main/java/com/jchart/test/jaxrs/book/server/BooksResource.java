@@ -39,7 +39,7 @@ import com.jchart.test.jaxrs.common.dto.Books;
   @POST Error
   @GET return a book 
   @PUT if exists, update book; if not ERROR
-  @Delete delete a book
+  @DELETE delete a book
   
 */
 
