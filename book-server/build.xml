@@ -22,10 +22,9 @@
     </delete>
 </target>
 
-<!--
-	for debug mode follow these instructions
-	https://cwiki.apache.org/WICKET/maven-jetty-plugin.html
--->
+<!-- to run in eclipse in debug more, follow these instructions 
+http://stackoverflow.com/questions/9066733/how-do-i-debug-a-web-application-running-on-jetty-in-eclipse -->
+	
 <target name="run-server">
     <exec executable="mvn" spawn="false">
       <arg line="jetty:run"/>

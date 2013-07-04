@@ -1,4 +1,4 @@
-<project name="paruss-rest-demo" default="all" basedir=".">
+<project name="rest-demo" default="all" basedir=".">
     
   <property file="build.properties"/>     
   <property environment="env"/>
